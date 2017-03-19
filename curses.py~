@@ -1,0 +1,17 @@
+from curses import *
+
+height = 500
+width = 500
+begin_y = (LINES / 2) - 250
+begin_x = (COLS / 2) - 250
+
+stdscr = initscr()
+
+stdscr = curses.newwin(height, width, begin_y, begin_x)
+
+curses.cbreak()
+stdscr.keypad(True)
+
+stdscr.border([0, 0, 0, 0, 0, 0, 0, 0])
+
+stdscr.refresh()
