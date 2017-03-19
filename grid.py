@@ -6,15 +6,12 @@ class Grid():
 		self.state = state
 
 	def __str__(self):
-		return '{}'.format([print([print(str(self.state[row][col]), end = '') for col in range(10)]) for row in range(10)])
+		output = ''
+		for row in range(10):
+			for col in range(10):
+				output += str(self.state[row][col])
+			output += "\n"
+		return output
 
 	def updateHead(self, snake):
 		self.state[snake.headPos[0]][snake.headPos[1]].char = '@'
-
-	'''def head(row, col)
-	for row in grid.state:
-		for col in row:
-			if col.location == (row, col):
-				col.char = '@'
-				print(col)'''
-
